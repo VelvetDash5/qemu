@@ -14,10 +14,6 @@ jobs:
           - os: ubuntu-22.04
             target_os: linux
             artifact_name: qemu-system-ppc-screamer-linux
-          # macOS Build (Apple Silicon / Intel runner)
-          - os: macos-14
-            target_os: macos
-            artifact_name: qemu-system-ppc-screamer-macos
 
     runs-on: ${{ matrix.os }}
 
@@ -55,16 +51,6 @@ jobs:
             --target-list=ppc-softmmu \
             --enable-audio-drv-list=pa,sdl \
             --enable-sdl \
-            --disable-werror
-
-      - name: Configure QEMU (macOS)
-        if: matrix.target_os == 'macos'
-        run: |
-          cd qemu-screamer
-          ./configure \
-            --target-list=ppc-softmmu \
-            --enable-audio-drv-list=coreaudio \
-            --enable-cocoa \
             --disable-werror
 
       # --- Step 4: Compile ---
