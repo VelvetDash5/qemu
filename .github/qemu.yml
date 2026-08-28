@@ -31,11 +31,6 @@ jobs:
             libglib2.0-dev libpixman-1-dev libsdl2-dev libpulse-dev \
             flex bison libslirp-dev
 
-      - name: Install macOS Dependencies
-        if: matrix.target_os == 'macos'
-        run: |
-          brew update
-          brew install ninja pkg-config glib pixman libslirp gettext
 
       # --- Step 2: Clone Screamer Fork ---
       - name: Clone QEMU Screamer Repository
