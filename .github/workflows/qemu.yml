@@ -53,7 +53,7 @@ jobs:
           cd qemu-screamer
           ./configure \
             --target-list=ppc-softmmu \
-            --enable-audio-drv-list=pa,sdl \
+            --audio-drv-list="pa" \
             --enable-sdl \
             --disable-werror
 
@@ -63,7 +63,7 @@ jobs:
           cd qemu-screamer
           ./configure \
             --target-list=ppc-softmmu \
-            --enable-audio-drv-list=coreaudio \
+            --audio-drv-list=coreaudio \
             --enable-cocoa \
             --disable-werror
 
