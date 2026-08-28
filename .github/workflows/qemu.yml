@@ -14,11 +14,6 @@ jobs:
           - os: ubuntu-22.04
             target_os: linux
             artifact_name: qemu-system-ppc-screamer-linux
-          # macOS Build (Apple Silicon / Intel runner)
-          - os: macos-14
-            target_os: macos
-            artifact_name: qemu-system-ppc-screamer-macos
-
     runs-on: ${{ matrix.os }}
 
     steps:
